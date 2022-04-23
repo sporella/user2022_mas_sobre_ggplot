@@ -1,5 +1,5 @@
 # Visualizaciones efectivas con ggplot2: más allá de las opciones por defecto
-Un taller en línea y en español realizado en el marco de la conferencia [useR!2022](https://user2022.r-project.org/) a cargo de [Stephanie Orellana](https://sporella.xyz/) y [Riva Quiroga](twitter.com/rivaquiroga). 
+Un taller en línea y en español realizado en el marco de la conferencia [useR!2022](https://user2022.r-project.org/) a cargo de [Stephanie Orellana](https://sporella.xyz/) y [Riva Quiroga](https://twitter.com/rivaquiroga). 
 
 ## ¿Cuándo?
 Lunes 20 de junio entre 14:00 y 17:30 (UTC-5). Puedes chequear a qué hora corresponde en tu ciudad [en este conversor de zonas horarias](https://everytimezone.com/s/f95061be).
