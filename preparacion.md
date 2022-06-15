@@ -17,9 +17,8 @@ R.Version()$version.string
 **Disponibles en CRAN**
 * tidyverse (esto instalará ggplot2 y algunos otros paquetes que utilizaremos para el procesamiento de los datos que se utilizarán como ejemplo)
 * patchwork
-* ggforce
 * gghighlight
-* ggrepel
+* ggtext
 
 
 **Disponibles en GitHub**
