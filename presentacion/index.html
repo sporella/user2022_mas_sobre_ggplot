@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Visualizaciones Efectivas con ggplot2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stephanie Orellana" />
+    <meta name="author" content="Riva Quiroga" />
+    <meta name="date" content="2022-06-21" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Visualizaciones Efectivas con ggplot2
+## <code>Más allá de las opciones por defecto</code>
+### Stephanie Orellana
+### Riva Quiroga
+### 2022-06-21
+
+---
+
+
+
+
+
+
+class: inverse
+# Temario
+
+--
+- **Repaso conceptos básicos ggplot**
+
+--
+- **Cómo mejorar nuestro gráfico de forma sencilla**
+
+--
+  - Ejemplo práctico 1
+
+--
+- **Cómo hacer énfasis en lo que queremos mostrar**
+
+--
+  - Ejemplo práctico 2
+
+--
+- **Tema**
+
+--
+  - Modificar el tema mediante paquetes 
+  - Modificar el tema a nuestro gusto
+      - Elementos del tema
+      - Actividad práctica
+
+--
+- **Extensiones de ggplot**
+
+--
+- **Más consejos**
+
+--
+- **Cierre**
+
+---
+class: middle, inverse
+# Conceptos básicos
+
+---
+# Lógica de capas
+
+&lt;img src="img/ggplot-es.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+# Lógica de capas
+
+
+```r
+ggplot(datos, 
+       aes(x = ..., y = ..., fill = ..., color =...))+
+  geom_*()+
+  scale_*_**()+
+  coord_*()+
+  facet_*(...~...)+
+  theme(...,
+        ...,
+        ...)
+```
+
+---
+# Lógica de capas
+
+
+```r
+ggplot(datos)+
+  geom_*(aes(x = ..., y = ..., fill = ..., color =...))+
+  scale_*_**()+
+  coord_*()+
+  facet_*(...~...)+
+  theme(...,
+        ...,
+        ...)
+```
+
+---
+# Lógica de capas
+
+
+```r
+ggplot(datos, aes(x = ..., y = ..., fill = ..., color =...))+
+  geom_*(color = "red")+
+  scale_*_**()+
+  coord_*()+
+  facet_*(...~...)+
+  theme(...,
+        ...,
+        ...)
+```
+
+
+---
+# aestethics **`aes()`**
+
+- La función `aes()` puede utilizarse en tres contextos:
+
+
+```r
+## Por separado ##
+# las estéticas dentro de aes() serán comunes a 
+# todos los geom que utilice.
+ggplot(datos)+
+  aes()+
+  geom_col()
+
+## Dentro de la función `ggplot()` ##
+# las estéticas dentro de aes() serán comunes a
+#  todos los geom que utilice.
+ggplot(datos, aes())+
+  geom_col()
+
+## Dentro de geom ##
+# las estéticas dentro de aes() serán válidas 
+# solo para el geom que la contiene.
+
+ggplot(datos)+
+  geom_col(aes())
+```
+
+---
+# aestethics **`aes()`**
+
+- Ponemos dentro de esta función estéticas que queremos mostrar que **varían según los valores que toman nuestros datos**
+
+- Las estéticas que podemos usar dependen del tipo de gráfico (`geom`) que estamos utilizando, pero las más utilizadas son:
+
+  - x
+  - y
+  - color
+  - fill
+  - alpha
+  - shape
+  - size
+
+---
+# aestethics **`aes()`**
+
+- Fuera de `aes()` podemos fijar aspectos estéticos que son comunes dentro de `geom` (no varían según los valores de los datos). Por ejemplo, si quiero que todas las columnas tengan una transparencia de 70%:
+
+
+```r
+ggplot(datos, aes(x = ..., y = ..., fill = ...))+
+  geom_col(alpha = 0.7)
+```
+
+- Podemos combinar estéticas dentro y fuera de `aes()`, y dentro y fuera de `geom_*()` para hacer el gráfico que tenemos en mente.
+
+- Todas las estéticas que utilizamos pueden escalarse mediante las funciones `scale_*_*()`.
+
+---
+# scales
+
+- Es muy importante entender si los valores que asignamos a una estética son de tipo continuo o discreto. Si asignamos mal la escala, recibiremos el famoso error:
+
+
+&lt;style type="text/css"&gt;
+.code-bg-red .remark-code, .code-bg-red .remark-code * {
+ color:red!important;
+}
+
+.code-sm .remark-code, .codesm .remark-code * {
+ font-size: 0.6em;
+}
+&lt;/style&gt;
+
+.code-bg-red[
+
+```r
+library(ggplot2)
+ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
+  geom_point()+
+  scale_color_continuous()
+```
+
+```
+## Error: Discrete value supplied to continuous scale
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="0%" /&gt;
+]
+
+---
+# scales
+
+- También es un error común utilizar una función que no corresponde con la estética que queremos cambiar:
+
+.pull-left[
+
+```r
+library(ggplot2)
+ggplot(iris, 
+       aes(x = Sepal.Length, 
+           y = Petal.Length, 
+           color = Species)) +
+  geom_point() +
+  scale_fill_discrete(type = c("pink", 
+                               "gold3", 
+                               "cyan"))
+```
+
+En este caso **no** recibimos un error, pero tampoco visualizamos el cambio en la escala.
+
+]
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+class: inverse, middle
+
+# Cómo mejorar nuestro gráfico de forma sencilla 💻
+
+**ejemplo práctico 1**
+
+---
+class: inverse
+
+# Resumen
+
+- Revisar títulos y etiquetas
+  - Cuáles son redundantes
+  - Cuáles son necesarias
+
+- Revisar etiquetas sobrepuestas
+  - Invertir ejes
+  - Escalar etiquetas con guides
+
+- Utilizar colores que tengan relación con los datos
+
+- Revisar leyenda
+
+---
+class: inverse, middle
+
+# Cómo hacer énfasis en lo que queremos mostrar 💻
+
+**ejemplo práctico 2**
+
+---
+class: inverse
+
+# Resumen
+
+---
+class: inverse, middle
+
+# Tema 🚀
+
+**Cómo hacer el gráfico que tengo en mente**
+
+---
+# Paquetes para temas
+
+---
+# Elementos del tema
+
+---
+class: inverse, middle
+
+# Actividad práctica 💪
+
+**Apliquemos lo aprendido**
+
+---
+class: inverse, middle
+
+# Extensiones de ggplot 🌐
+
+**Un universo de paquetes**
+
+---
+class: inverse, middle
+
+# Más consejos ⭐
+
+**Hay mucho más por aprender**
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:10"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
