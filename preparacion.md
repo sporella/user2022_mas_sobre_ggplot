@@ -22,8 +22,7 @@ R.Version()$version.string
 
 
 **Disponibles en GitHub**
-* https://github.com/hrbrmstr/ggchicklet
-
+* remotes::install_github("wilkelab/gridtext") (es importante instalar la versión de desarrollo, ya que contiene una actualización imṕortante que no está en la versión de CRAN aún)
 
 ## Preparar tu espacio de trabajo
 
