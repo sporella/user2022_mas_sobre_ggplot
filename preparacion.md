@@ -19,6 +19,7 @@ R.Version()$version.string
 * patchwork
 * gghighlight
 * ggtext
+* hrbrthemes
 
 
 **Disponibles en GitHub**
