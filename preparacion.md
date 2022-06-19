@@ -16,7 +16,6 @@ A continuación encontrarás los paquetes que es necesario instalar para poder e
 
 **Disponibles en CRAN**
 * tidyverse (esto instalará ggplot2 y algunos otros paquetes que utilizaremos para el procesamiento de los datos que se utilizarán como ejemplo)
-* patchwork
 * gghighlight
 * ggtext
 * ggthemes
@@ -24,7 +23,7 @@ A continuación encontrarás los paquetes que es necesario instalar para poder e
 
 
 **Disponibles en GitHub**
-* remotes::install_github("wilkelab/gridtext") (es importante instalar la versión de desarrollo, ya que contiene una actualización imṕortante que no está en la versión de CRAN aún)
+* `remotes::install_github("wilkelab/gridtext")` (es importante instalar la versión de desarrollo, ya que contiene una actualización imṕortante que no está en la versión de CRAN aún)
 
 Adicionalmente, hablaremos acerca de algunos paquetes que permiten extender las funcionalidades de {ggplot2}, pero no los utilizaremos en los ejercicios del taller. La lista quedará en la presentación que se mostrará durante el tutorial. 
 
