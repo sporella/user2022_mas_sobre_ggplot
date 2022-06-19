@@ -7,17 +7,29 @@
     <meta name="author" content="Riva Quiroga" />
     <meta name="date" content="2022-06-21" />
     <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Visualizaciones Efectivas con ggplot2
+]
+.subtitle[
 ## <code>Más allá de las opciones por defecto</code>
+]
+.author[
 ### Stephanie Orellana
+]
+.author[
 ### Riva Quiroga
+]
+.date[
 ### 2022-06-21
+]
 
 ---
 
@@ -61,6 +73,27 @@ background-position: center right 50px
 **Uso creativo**
   - Ejemplo práctico 4
 
+
+---
+class: middle, inverse
+
+
+# Antes de empezar, hablemos acerca de cómo nos vamos a organizar
+
+---
+class: middle
+
+# La carpeta con el proyecto
+
+### versión para descargar: AGREGAR AL FINAL!!
+### copia en RStudio Cloud: https://bit.ly/ggplot22-cloud
+
+---
+class: middle
+
+# Esta presentación
+
+### https://bit.ly/ggplot22-presentacion
 
 
 ---
@@ -195,7 +228,11 @@ class: inverse, middle
 
 # Cómo mejorar nuestro gráfico de forma sencilla 💻
 
-**ejemplo práctico 1**
+**ejemplo práctico 1: : `codigo/01_mejoras-sencillas.R`**
+
+---
+
+class: inverse
 
 ---
 class: inverse
@@ -217,17 +254,31 @@ class: inverse
 - Guardar, buen tamaño, buena resolución
 
 ---
+class: middle
+
+# Volvemos en
+<div class="countdown" id="timer_62af8143" style="top:38%;right:39%;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+---
 class: inverse, middle
 
 # Cómo hacer énfasis en lo que queremos mostrar 💻
 
-**ejemplo práctico 2**
+**ejemplo práctico 2: `codigo/02_enfocar-la-atencion.R`**
+
+---
+class: inverse
+
 
 ---
 class: inverse
 
 # Resumen
 
+- Ayuda a quien lee a enfocarse en los datos de interés
+- Incluye anotaciones que ayuden a interpretar los datos, sobre todo en los casos en que no hay un texto que acompaña al gráfico
+- Procura que las etiquetas de los ejes y el formato de los valores sean entendibles
 
 ---
 class: inverse, middle
@@ -282,21 +333,26 @@ class: inverse, middle
 - [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
 
 ---
-# Elementos del tema
-
 ---
 class: inverse, middle
 
-# Actividad práctica 💡
+# Cómo modificar el tema 💻
 
-**Apliquemos lo aprendido**
+**ejemplo práctico 3: `codigo/03_modificar-el-tema.R`**
+---
+class: middle
 
+# Volvemos en
+<div class="countdown" id="timer_62af83ba" style="top:38%;right:39%;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+---
 ---
 class: inverse, middle
 
 # Uso creativo ⭐
 
-**Hay mucho más por aprender**
+**Hay mucho más por aprender: codigo/04_uso-creativo.R**
 
 ---
 class: inverse, middle
@@ -359,6 +415,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

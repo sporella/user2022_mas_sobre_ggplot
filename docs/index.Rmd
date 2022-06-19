@@ -72,6 +72,27 @@ background-position: center right 50px
   - Ejemplo práctico 4
 
 
+---
+class: middle, inverse
+
+
+# Antes de empezar, hablemos acerca de cómo nos vamos a organizar
+
+---
+class: middle
+
+# La carpeta con el proyecto
+
+### versión para descargar: AGREGAR AL FINAL!!
+### copia en RStudio Cloud: https://bit.ly/ggplot22-cloud
+
+---
+class: middle
+
+# Esta presentación
+
+### https://bit.ly/ggplot22-presentacion
+
 
 ---
 class: middle, inverse
@@ -214,7 +235,11 @@ class: inverse, middle
 
 # Cómo mejorar nuestro gráfico de forma sencilla `r emo::ji(keyword = "computer")`
 
-**ejemplo práctico 1**
+**ejemplo práctico 1: : `codigo/01_mejoras-sencillas.R`**
+
+---
+
+class: inverse
 
 ---
 class: inverse
@@ -236,17 +261,29 @@ class: inverse
 - Guardar, buen tamaño, buena resolución
 
 ---
+class: middle
+
+# Volvemos en
+`r countdown::countdown(minutes = 5, seconds = 00, top = "38%", right = "39%")`
+---
 class: inverse, middle
 
 # Cómo hacer énfasis en lo que queremos mostrar `r emo::ji(keyword = "computer")`
 
-**ejemplo práctico 2**
+**ejemplo práctico 2: `codigo/02_enfocar-la-atencion.R`**
+
+---
+class: inverse
+
 
 ---
 class: inverse
 
 # Resumen
 
+- Ayuda a quien lee a enfocarse en los datos de interés
+- Incluye anotaciones que ayuden a interpretar los datos, sobre todo en los casos en que no hay un texto que acompaña al gráfico
+- Procura que las etiquetas de los ejes y el formato de los valores sean entendibles
 
 ---
 class: inverse, middle
@@ -301,21 +338,24 @@ class: inverse, middle
 - [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
 
 ---
-# Elementos del tema
-
 ---
 class: inverse, middle
 
-# Actividad práctica `r emo::ji(keyword = "bulb")`
+# Cómo modificar el tema `r emo::ji(keyword = "computer")`
 
-**Apliquemos lo aprendido**
+**ejemplo práctico 3: `codigo/03_modificar-el-tema.R`**
+---
+class: middle
 
+# Volvemos en
+`r countdown::countdown(minutes = 5, seconds = 00, top = "38%", right = "39%")`
+---
 ---
 class: inverse, middle
 
 # Uso creativo `r emo::ji(keyword = "star")`
 
-**Hay mucho más por aprender**
+**Hay mucho más por aprender: codigo/04_uso-creativo.R**
 
 ---
 class: inverse, middle
