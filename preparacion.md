@@ -20,6 +20,7 @@ A continuación encontrarás los paquetes que es necesario instalar para poder e
 * ggtext
 * ggthemes
 * showtext
+* ggimage
 
 
 **Disponibles en GitHub**
