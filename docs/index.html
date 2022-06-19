@@ -27,40 +27,41 @@ class: center, middle, inverse, title-slide
 
 
 class: inverse
+background-image: url("img/cohete.png")
+background-size: 400px 400px
+background-position: center right 50px
+
 # Temario
 
 --
-- **Repaso conceptos básicos ggplot**
+
+**Repaso conceptos básicos ggplot**
 
 --
-- **Cómo mejorar nuestro gráfico de forma sencilla**
 
---
+**Cómo mejorar nuestro gráfico de forma sencilla**
   - Ejemplo práctico 1
 
 --
-- **Cómo hacer énfasis en lo que queremos mostrar**
 
---
+**Cómo hacer énfasis en lo que queremos mostrar**
   - Ejemplo práctico 2
 
 --
-- **Tema**
+
+**Extensiones de ggplot**
 
 --
-  - Modificar el tema mediante paquetes 
+
+**Tema y sus elementos**
   - Modificar el tema a nuestro gusto
-      - Elementos del tema
-      - Actividad práctica
-
+      - Ejemplo práctico 3
 --
-- **Extensiones de ggplot**
 
---
-- **Más consejos**
+**Uso creativo**
+  - Ejemplo práctico 4
 
---
-- **Cierre**
+
 
 ---
 class: middle, inverse
@@ -70,53 +71,6 @@ class: middle, inverse
 # Lógica de capas
 
 &lt;img src="img/ggplot-es.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-# Lógica de capas
-
-
-```r
-ggplot(datos, 
-       aes(x = ..., y = ..., fill = ..., color =...))+
-  geom_*()+
-  scale_*_**()+
-  coord_*()+
-  facet_*(...~...)+
-  theme(...,
-        ...,
-        ...)
-```
-
----
-# Lógica de capas
-
-
-```r
-ggplot(datos)+
-  geom_*(aes(x = ..., y = ..., fill = ..., color =...))+
-  scale_*_**()+
-  coord_*()+
-  facet_*(...~...)+
-  theme(...,
-        ...,
-        ...)
-```
-
----
-# Lógica de capas
-
-
-```r
-ggplot(datos, aes(x = ..., y = ..., fill = ..., color =...))+
-  geom_*(color = "red")+
-  scale_*_**()+
-  coord_*()+
-  facet_*(...~...)+
-  theme(...,
-        ...,
-        ...)
-```
-
 
 ---
 # aestethics **`aes()`**
@@ -129,13 +83,13 @@ ggplot(datos, aes(x = ..., y = ..., fill = ..., color =...))+
 # las estéticas dentro de aes() serán comunes a 
 # todos los geom que utilice.
 ggplot(datos)+
-  aes()+
+  `aes()` + 
   geom_col()
 
-## Dentro de la función `ggplot()` ##
+## Dentro de la función ggplot() ##
 # las estéticas dentro de aes() serán comunes a
 #  todos los geom que utilice.
-ggplot(datos, aes())+
+ggplot(datos, `aes()`)+
   geom_col()
 
 ## Dentro de geom ##
@@ -143,7 +97,7 @@ ggplot(datos, aes())+
 # solo para el geom que la contiene.
 
 ggplot(datos)+
-  geom_col(aes())
+  geom_col(`aes()`)
 ```
 
 ---
@@ -169,7 +123,7 @@ ggplot(datos)+
 
 ```r
 ggplot(datos, aes(x = ..., y = ..., fill = ...))+
-  geom_col(alpha = 0.7)
+  geom_col(`alpha = 0.7`)
 ```
 
 - Podemos combinar estéticas dentro y fuera de `aes()`, y dentro y fuera de `geom_*()` para hacer el gráfico que tenemos en mente.
@@ -192,20 +146,21 @@ ggplot(datos, aes(x = ..., y = ..., fill = ...))+
 }
 &lt;/style&gt;
 
-.code-bg-red[
 
 ```r
 library(ggplot2)
 ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
   geom_point()+
-  scale_color_continuous()
+  scale_color_`continuous`()
 ```
+
+.code-bg-red[
 
 ```
 ## Error: Discrete value supplied to continuous scale
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="0%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="0%" /&gt;
 ]
 
 ---
@@ -220,9 +175,9 @@ library(ggplot2)
 ggplot(iris, 
        aes(x = Sepal.Length, 
            y = Petal.Length, 
-           color = Species)) +
+           `color` = Species)) +
   geom_point() +
-  scale_fill_discrete(type = c("pink", 
+  scale_`fill`_discrete(type = c("pink", 
                                "gold3", 
                                "cyan"))
 ```
@@ -232,7 +187,7 @@ En este caso **no** recibimos un error, pero tampoco visualizamos el cambio en l
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -259,6 +214,8 @@ class: inverse
 
 - Revisar leyenda
 
+- Guardar, buen tamaño, buena resolución
+
 ---
 class: inverse, middle
 
@@ -271,6 +228,44 @@ class: inverse
 
 # Resumen
 
+
+---
+class: inverse, middle
+
+# Extensiones de ggplot 🌎
+
+**Un universo de paquetes**
+
+---
+# Para publicaciones
+
+- [{ggstatsplot}](https://indrajeetpatil.github.io/ggstatsplot/) 
+
+- [{ggpubr}](https://rpkgs.datanovia.com/ggpubr/)
+
+---
+# Unir gráficos
+
+- [{patchwork}](https://patchwork.data-imaginist.com/)
+
+- [{cowplot}](https://wilkelab.org/cowplot/index.html)
+
+---
+# Más geoms
+
+- [{ggforce}](https://ggforce.data-imaginist.com/)
+
+- [{ggraph}](https://ggraph.data-imaginist.com/)
+
+- [{ggwordcloud}](https://lepennec.github.io/ggwordcloud/)
+
+---
+# Otros usos
+
+- [{calendR}](https://r-coder.com/calendar-plot-r/)
+
+- [{ggkeyboard}](https://github.com/sharlagelfand/ggkeyboard)
+
 ---
 class: inverse, middle
 
@@ -281,36 +276,47 @@ class: inverse, middle
 ---
 # Paquetes para temas
 
+- [{ggthemes}](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+- [{hrbrthemes}](https://cinc.rud.is/web/packages/hrbrthemes/)
+- [{ggdark}](https://github.com/nsgrantham/ggdark)
+- [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
 ---
 # Elementos del tema
 
 ---
 class: inverse, middle
 
-# Actividad práctica 💪
+# Actividad práctica 💡
 
 **Apliquemos lo aprendido**
 
 ---
 class: inverse, middle
 
-# Extensiones de ggplot 🌏
+# Uso creativo ⭐
 
-**Un universo de paquetes**
+**Hay mucho más por aprender**
 
 ---
 class: inverse, middle
 
-# Más consejos ⭐
+# Cómo practicar 💪
 
-**Hay mucho más por aprender**
+**Desafíos de visualización**
 
+---
+class: inverse, middle
+# ¡Muchas gracias! 👏
+
+Material disponible en el [repositorio del taller](https://github.com/sporella/user2022_mas_sobre_ggplot)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "zenburn",
 "highlightLines": true,
+"highlightSpans": true,
 "countIncrementalSlides": false,
 "ratio": "16:10"
 });
