@@ -4,7 +4,7 @@ subtitle: '`Más allá de las opciones por defecto`'
 author: 
   - "Stephanie Orellana"
   - "Riva Quiroga"
-date: '2022-06-21'
+date: '2022-06-20'
 output:
   xaringan::moon_reader:
     lib_dir: libs
