@@ -361,6 +361,19 @@ knitr::include_graphics("https://wilkelab.org/cowplot/articles/drawing_with_on_p
 ```
 ]
 
+---
+# Agregar movimiento
+
+.pull-left[
+
+### [{gganimate}](https://gganimate.com/)
+
+
+```{r, echo = F}
+knitr::include_graphics("https://gganimate.com/reference/figures/README-unnamed-chunk-4-1.gif")
+```
+
+]
 
 
 ---
