@@ -18,6 +18,15 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
+class: center, middle
+
+# `r rmarkdown::metadata$title`
+## `r rmarkdown::metadata$subtitle`
+### empezamos en
+`r countdown::countdown(minutes = 10, seconds = 00, left = "34.5%")`
+
+
+---
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -284,7 +293,7 @@ class: inverse, middle
 
 # Cómo ayudar a nuestra audiencia a entender lo que queremos comunicar `r emo::ji(keyword = "computer")`
 
-**ejemplo práctico 2: `codigo/02_enfocar-la-atencion.R`**
+**ejemplo práctico 2: `codigo/02_atencion-audiencia.R`**
 
 ---
 class: inverse
