@@ -60,18 +60,14 @@ background-position: center right 50px
 
 --
 
-**Cómo hacer énfasis en lo que queremos mostrar**
+**Cómo ayudar a nuestra audiencia a entender lo que</br>queremos comunicar**
   - Ejemplo práctico 2
 
 --
 
 **Extensiones de ggplot**
 
---
 
-**Tema y sus elementos**
-  - Modificar el tema a nuestro gusto
-      - Ejemplo práctico 3
 ---
 class: inverse
 background-image: url("img/cohete.png")
@@ -79,6 +75,11 @@ background-size: 400px 400px
 background-position: center right 50px
 
 # Temario
+
+--
+
+**El tema y sus elementos**
+  - Ejemplo práctico 3
 
 --
 **Uso creativo**
@@ -280,7 +281,7 @@ class: middle
 ---
 class: inverse, middle
 
-# Cómo hacer énfasis en lo que queremos mostrar `r emo::ji(keyword = "computer")`
+# Cómo ayudar a nuestra audiencia a entender lo que queremos comunicar `r emo::ji(keyword = "computer")`
 
 **ejemplo práctico 2: `codigo/02_enfocar-la-atencion.R`**
 
@@ -292,10 +293,17 @@ class: inverse
 class: inverse
 
 # Resumen
+--
 
-- Ayuda a quien lee a enfocarse en los datos de interés
-- Incluye anotaciones que ayuden a interpretar los datos, sobre todo en los casos en que no hay un texto que acompaña al gráfico
-- Procura que las etiquetas de los ejes y el formato de los valores sean entendibles
+</br>
+### - Ayuda a quien lee a enfocarse en los datos de interés
+
+--
+
+### - Incluye anotaciones que ayuden a interpretar los datos, sobre todo en los casos en que no hay un texto que acompaña al gráfico
+
+--
+### - Procura que las etiquetas de los ejes y el formato de los valores sean entendibles
 
 ---
 class: inverse, middle
@@ -428,7 +436,15 @@ class: inverse, middle
 # Tema `r emo::ji(keyword = "rocket")`
 
 **Cómo hacer el gráfico que tengo en mente**
+---
+class: middle
 
+## Con la función `theme()` podemos modificar los componentes de un gráfico que no son datos (por ejemplo, el fondo, la fuente tipográfica, las leyendas, etc.)
+
+---
+class: middle
+
+## La forma más simple de ir más allá de las opciones por defecto, es usar temas pre-hechos `r emo::ji("package")`
 ---
 # Paquetes para temas
 
@@ -474,14 +490,13 @@ knitr::include_graphics("https://ryo-n7.github.io/assets/2019-05-16-introducing-
 
 ]
 
-
----
 ---
 class: inverse, middle
 
 # Cómo modificar el tema `r emo::ji(keyword = "computer")`
 
 **ejemplo práctico 3: `codigo/03_modificar-el-tema.R`**
+---
 ---
 class: middle
 
@@ -493,16 +508,16 @@ class: inverse, middle
 
 # Uso creativo `r emo::ji(keyword = "star")`
 
-**Hay mucho más por aprender: codigo/04_uso-creativo.R**
+**Hay mucho más por aprender: `codigo/04_uso-creativo.R`**
 
 ---
 # Uso creativo: arte generativo
 
 .pull-left[
-### [Ijeamaka A](https://twitter.com/ijeamaka_a)
+### [Ijeamaka Anyene](https://twitter.com/ijeamaka_a)
 ### [Meghan Harris](https://www.thetidytrekker.com/rtistry-gallery)
-### [Antonio Sánchez Chinchón](https://twitter.com/aschinchon)
 ### [Danielle Navarro](https://art.djnavarro.net/)
+### [Antonio Sánchez Chinchón](https://twitter.com/aschinchon)
 ### [Thomas Lin Pedersen](https://www.data-imaginist.com/art)
 ]
 
@@ -535,6 +550,8 @@ class: inverse, middle
 ### [#30daymapchallenge](https://30daymapchallenge.com/)
 
 ### [#DuBois Challenge](https://nightingaledvs.com/the-dubois-challenge/)
+
+### [#30diasdegraficos](https://github.com/cienciadedatos/datos-de-miercoles/blob/master/30-dias-de-graficos-2020.md)
 
 ]
 
