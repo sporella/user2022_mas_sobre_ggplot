@@ -19,3 +19,16 @@ Los detalles sobre el registro están disponibles en [la página web de la confe
 ## Preparación
 Las indicaciones sobre cómo preparar tu computador y tu espacio de trabajo para el tutorial se encuentran en [este documento](https://github.com/sporella/user2022_ggplot_avanzado/blob/main/preparacion.md).  
 
+## Materiales
+
+- 📁 Enlace abreviado a este repositorio: https://bit.ly/ggplot22-repositorio
+- 🖥️ Presentación:
+- Proyecto de RStudio:
+  - 💻 para descargar localmente:
+  - 🌤️ para trabajar en RStudio Cloud:
+- Código en vivo:
+  - ejemplo 1:
+  - ejemplo 2:
+  - ejemplo 3:
+  - ejemplo 4:
+
