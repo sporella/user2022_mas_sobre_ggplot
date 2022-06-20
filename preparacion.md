@@ -10,6 +10,8 @@ En este taller utilizaremos R a través de RStudio. En el caso de R, es importan
 R.Version()$version.string
 ```
 
+También puedes trabajar en RStudio Cloud, si así lo prefieres, que por defecto traer la versión 4.2 de R. 
+
 ## Paquetes necesarios
 
 A continuación encontrarás los paquetes que es necesario instalar para poder ejecutar sin problemas el código que escribiremos durante la sesión. 
@@ -22,9 +24,12 @@ A continuación encontrarás los paquetes que es necesario instalar para poder e
 * showtext
 * ggimage
 
+El código para instalarlos todos: `install.packages(c("tidyverse", "gghighlight", "ggtext", "ggthemes", "showtext", "ggimage"))`
 
 **Disponibles en GitHub**
 * `remotes::install_github("wilkelab/gridtext")` (es importante instalar la versión de desarrollo, ya que contiene una actualización imṕortante que no está en la versión de CRAN aún)
+
+Al inicio del tutorial se compartirá un enlace a un proyecto de RStudio Cloud que tiene todo instalado, en caso de que prefieras utilizar esta plataforma o que no te resulte instalar algún paquete. 
 
 Adicionalmente, hablaremos acerca de algunos paquetes que permiten extender las funcionalidades de {ggplot2}, pero no los utilizaremos en los ejercicios del taller. La lista quedará en la presentación que se mostrará durante el tutorial. 
 
