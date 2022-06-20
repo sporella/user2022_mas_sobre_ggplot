@@ -132,7 +132,8 @@ class: middle
 
 ---
 class: middle, inverse
-# Conceptos básicos
+# Conceptos básicos `r emo::ji(keyword = "pencil2")`
+**Mejorando nuestro modelo mental**
 
 ---
 # Lógica de capas
@@ -297,7 +298,7 @@ class: inverse
 class: middle
 
 # Volvemos en
-`r countdown::countdown(minutes = 5, seconds = 00, top = "35%", right = "30%")`
+`r countdown::countdown(minutes = 7, seconds = 00, top = "35%", right = "30%")`
 ---
 class: inverse, middle
 
@@ -534,7 +535,7 @@ class: inverse, middle
 class: middle
 
 # Volvemos en
-`r countdown::countdown(minutes = 5, seconds = 00, top = "35%", right = "30%")`
+`r countdown::countdown(minutes = 7, seconds = 00, top = "35%", right = "30%")`
 ---
 ---
 class: inverse, middle
