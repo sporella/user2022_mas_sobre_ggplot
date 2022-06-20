@@ -22,13 +22,13 @@ Las indicaciones sobre cómo preparar tu computador y tu espacio de trabajo para
 ## Materiales
 
 - 📁 Enlace abreviado a este repositorio: https://bit.ly/ggplot22-repositorio
-- 🖥️ Presentación:
+- 🖥️ Presentación: https://bit.ly/ggplot22-presentacion
 - Proyecto de RStudio:
-  - 💻 para descargar localmente:
-  - 🌤️ para trabajar en RStudio Cloud:
+  - 💻 para descargar localmente: https://bit.ly/ggplot22-proyecto
+  - 🌤️ para trabajar en RStudio Cloud: https://bit.ly/ggplot22-cloud
 - Código en vivo:
-  - ejemplo 1:
-  - ejemplo 2:
-  - ejemplo 3:
-  - ejemplo 4:
+  - ejemplo 1: https://bit.ly/ggplot22-codigo-1
+  - ejemplo 2: https://bit.ly/ggplot22-codigo-2
+  - ejemplo 3: https://bit.ly/ggplot22-codigo-3
+  - ejemplo 4: https://bit.ly/ggplot22-codigo-4
 
