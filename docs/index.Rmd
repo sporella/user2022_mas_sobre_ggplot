@@ -46,7 +46,12 @@ style_duo_accent(
   extra_css =  list(
   ".remark-slide a" = list("color" = "#1687a7"),
   ".remark-slide-content h3" = list("color" = "#1687a7"),
-  ".code-text-red" = list("color" = "#ff002f"))
+  ".code-text-red" = list("color" = "#ff002f"),
+  ".title-slide" = list(
+  "background-image" = "url(https://user2021.r-project.org/img/artwork/user-logo-color.png)",
+  "background-size" = "200px 200px",
+  "background-position" = "right bottom")
+)
   
 )
 ```
@@ -114,7 +119,7 @@ class: middle
 
 # La carpeta con el proyecto
 
-### versión para descargar: AGREGAR AL FINAL!!
+### versión para descargar: https://bit.ly/ggplot22-proyecto
 ### copia en RStudio Cloud: https://bit.ly/ggplot22-cloud
 
 ---
@@ -546,7 +551,7 @@ class: inverse, middle
 
 .pull-right[
 
-```{r, echo = F}
+```{r, echo = F, out.width="90%", fig.align = "center"}
 knitr::include_graphics("https://djnavarro.net/series-unboxing/2000/unboxing_387.png")
 ```
 
@@ -589,6 +594,10 @@ knitr::include_graphics("https://ossia.io/assets/blog/genuary2022/genuary.png")
 ]
 ---
 class: inverse, middle
+background-image: url(https://user2021.r-project.org/img/artwork/user-logo-color.png)
+background-size: 200px 200px
+background-position: right bottom
+
 # ¡Muchas gracias! `r emo::ji(keyword = "clap")`
 
 Material disponible en el [repositorio del taller](https://github.com/sporella/user2022_mas_sobre_ggplot)
