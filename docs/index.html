@@ -15,21 +15,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-.title[
 # Visualizaciones Efectivas con ggplot2
-]
-.subtitle[
 ## <code>Más allá de las opciones por defecto</code>
-]
-.author[
 ### Stephanie Orellana
-]
-.author[
 ### Riva Quiroga
-]
-.date[
 ### 2022-06-20
-]
 
 ---
 
@@ -68,11 +58,25 @@ background-position: center right 50px
 **Tema y sus elementos**
   - Modificar el tema a nuestro gusto
       - Ejemplo práctico 3
---
+---
+class: inverse
+background-image: url("img/cohete.png")
+background-size: 400px 400px
+background-position: center right 50px
 
+# Temario
+
+--
 **Uso creativo**
   - Ejemplo práctico 4
 
+--
+
+**Cómo practicar**
+
+--
+
+**Cierre**
 
 ---
 class: middle, inverse
@@ -169,16 +173,6 @@ ggplot(datos, aes(x = ..., y = ..., fill = ...))+
 - Es muy importante entender si los valores que asignamos a una estética son de tipo continuo o discreto. Si asignamos mal la escala, recibiremos el famoso error:
 
 
-&lt;style type="text/css"&gt;
-.code-bg-red .remark-code, .code-bg-red .remark-code * {
- color:red!important;
-}
-
-.code-sm .remark-code, .codesm .remark-code * {
- font-size: 0.6em;
-}
-&lt;/style&gt;
-
 
 ```r
 library(ggplot2)
@@ -187,13 +181,13 @@ ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
   scale_color_`continuous`()
 ```
 
-.code-bg-red[
+.code-text-red[
 
 ```
 ## Error: Discrete value supplied to continuous scale
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="0%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="0%" /&gt;
 ]
 
 ---
@@ -220,7 +214,7 @@ En este caso **no** recibimos un error, pero tampoco visualizamos el cambio en l
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -245,9 +239,11 @@ class: inverse
 
 - Revisar etiquetas sobrepuestas
   - Invertir ejes
-  - Escalar etiquetas con guides
+  - Escalar etiquetas con scale_*_discrete() y guide_axis()
+  
+- Dar formato a las etiquetas de ejes cuando sea necesario. Por ejemplo en caso de monedas o porcentaje.
 
-- Utilizar colores que tengan relación con los datos
+- Utilizar colores que tengan relación con los datos y sean contrastantes.
 
 - Revisar leyenda
 
@@ -257,7 +253,7 @@ class: inverse
 class: middle
 
 # Volvemos en
-<div class="countdown" id="timer_62af8308" style="top:38%;right:39%;" data-warnwhen="0">
+<div class="countdown" id="timer_62b013da" style="top:35%;right:30%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ---
@@ -290,32 +286,100 @@ class: inverse, middle
 ---
 # Para publicaciones
 
-- [{ggstatsplot}](https://indrajeetpatil.github.io/ggstatsplot/) 
 
-- [{ggpubr}](https://rpkgs.datanovia.com/ggpubr/)
+.pull-left[
+
+### [{ggstatsplot}](https://indrajeetpatil.github.io/ggstatsplot/) 
+
+&lt;img src="https://rpkgs.datanovia.com/ggpubr/tools/README-ggpubr-box-plot-dot-plots-strip-charts-2.png" width="80%" /&gt;
+
+]
+
+
+.pull-right[
+
+### [{ggpubr}](https://rpkgs.datanovia.com/ggpubr/)
+
+![](https://indrajeetpatil.github.io/ggstatsplot/reference/figures/README-ggbetweenstats1-1.png)&lt;!-- --&gt;
+
+]
+
+
 
 ---
 # Unir gráficos
 
-- [{patchwork}](https://patchwork.data-imaginist.com/)
+.pull-left[
 
-- [{cowplot}](https://wilkelab.org/cowplot/index.html)
+### [{patchwork}](https://patchwork.data-imaginist.com/)
+
+![](https://patchwork.data-imaginist.com/articles/guides/assembly_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+
+### [{cowplot}](https://wilkelab.org/cowplot/index.html)
+
+![](https://wilkelab.org/cowplot/articles/drawing_with_on_plots_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+]
+
+
 
 ---
 # Más geoms
 
-- [{ggforce}](https://ggforce.data-imaginist.com/)
+.pull-left[
 
-- [{ggraph}](https://ggraph.data-imaginist.com/)
+### [{ggforce}](https://ggforce.data-imaginist.com/)
 
-- [{ggwordcloud}](https://lepennec.github.io/ggwordcloud/)
+
+![](https://ggforce.data-imaginist.com/reference/geom_delvor-3.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+
+### [{ggraph}](https://ggraph.data-imaginist.com/)
+
+![](https://ggraph.data-imaginist.com/articles/Layouts_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+
+]
+
+---
+# Más geoms
+
+.pull-left[
+
+### [{geomtextpath}](https://lepennec.github.io/ggwordcloud/)
+
+![](https://allancameron.github.io/geomtextpath/reference/figures/README-density_demo-1.png)&lt;!-- --&gt;
+]
+
+
+.pull-right[
+
+### [{ggwordcloud}](https://lepennec.github.io/ggwordcloud/)
+
+![](https://lepennec.github.io/ggwordcloud/articles/ggwordcloud_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+]
 
 ---
 # Otros usos
 
-- [{calendR}](https://r-coder.com/calendar-plot-r/)
+.pull-left[
+### [{calendR}](https://r-coder.com/calendar-plot-r/)
 
-- [{ggkeyboard}](https://github.com/sharlagelfand/ggkeyboard)
+&lt;img src="https://r-coder.com/wp-content/uploads/2020/09/background-image-calendar-r.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+.pull-right[
+### [{ggkeyboard}](https://github.com/sharlagelfand/ggkeyboard)
+
+![](https://raw.githubusercontent.com/sharlagelfand/ggkeyboard/main/man/figures/README-pastel-1.png)&lt;!-- --&gt;
+]
 
 ---
 class: inverse, middle
@@ -327,10 +391,40 @@ class: inverse, middle
 ---
 # Paquetes para temas
 
-- [{ggthemes}](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
-- [{hrbrthemes}](https://cinc.rud.is/web/packages/hrbrthemes/)
-- [{ggdark}](https://github.com/nsgrantham/ggdark)
-- [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+.pull-left[
+### [{ggthemes}](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+
+&lt;img src="https://yutannihilation.github.io/allYourFigureAreBelongToUs/figure/source/1991-05-31-theme_wsj/theme_wsj-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+### [{hrbrthemes}](https://cinc.rud.is/web/packages/hrbrthemes/)
+
+![](https://cinc.rud.is/web/packages/hrbrthemes/reference/figures/README-sc-1.png)&lt;!-- --&gt;
+
+]
+
+---
+# Paquetes para temas
+
+.pull-left[
+### [{ggdark}](https://github.com/nsgrantham/ggdark)
+
+![](https://github.com/nsgrantham/ggdark/raw/master/man/figures/add-element-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+### [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
+
+![](https://ryo-n7.github.io/assets/2019-05-16-introducing-tvthemes-package_files/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+
+]
+
 
 ---
 ---
@@ -343,7 +437,7 @@ class: inverse, middle
 class: middle
 
 # Volvemos en
-<div class="countdown" id="timer_62af83d4" style="top:38%;right:39%;" data-warnwhen="0">
+<div class="countdown" id="timer_62b01429" style="top:35%;right:30%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ---
@@ -355,12 +449,51 @@ class: inverse, middle
 **Hay mucho más por aprender: codigo/04_uso-creativo.R**
 
 ---
+# Uso creativo: arte generativo
+
+.pull-left[
+### [Ijeamaka A](https://twitter.com/ijeamaka_a)
+### [Meghan Harris](https://www.thetidytrekker.com/rtistry-gallery)
+### [Antonio Sánchez Chinchón](https://twitter.com/aschinchon)
+### [Danielle Navarro](https://art.djnavarro.net/)
+### [Thomas Lin Pedersen](https://www.data-imaginist.com/art)
+]
+
+.pull-right[
+
+![](https://djnavarro.net/series-unboxing/2000/unboxing_387.png)&lt;!-- --&gt;
+
+https://art.djnavarro.net/gallery/unboxing/
+]
+
+
+---
+
 class: inverse, middle
 
 # Cómo practicar 💪
 
 **Desafíos de visualización**
 
+---
+# Desafíos de visualización
+
+.pull-left[
+### [#genuary](https://genuary.art/)
+
+### [#30daychartchallenge](https://30daychartchallenge.org/)
+
+### [#30daymapchallenge](https://30daymapchallenge.com/)
+
+### [#DuBois Challenge](https://nightingaledvs.com/the-dubois-challenge/)
+
+]
+
+.pull-right[
+
+![](https://pbs.twimg.com/media/FPKZks-WUAQXHWB?format=jpg&amp;name=4096x4096)&lt;!-- --&gt;![](https://ossia.io/assets/blog/genuary2022/genuary.png)&lt;!-- --&gt;
+
+]
 ---
 class: inverse, middle
 # ¡Muchas gracias! 👏
@@ -415,19 +548,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
-// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
-// screen reader (see PR #262)
-(function(d) {
-  let res = {};
-  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
-    const t = tr.querySelector('td:nth-child(2)').innerText;
-    tr.querySelectorAll('td:first-child .key').forEach(key => {
-      const k = key.innerText;
-      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
-    });
-  });
-  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
-})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

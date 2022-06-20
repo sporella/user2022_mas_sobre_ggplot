@@ -15,7 +15,7 @@
  *    - xaringan wiki: https://github.com/yihui/xaringan/wiki
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
- *  Version: 0.4.1
+ *  Version: 0.3.0.9000
  *
  * ------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400&display=swap);
@@ -31,11 +31,10 @@
   --text-font-base: sans-serif;
   --header-font-family: 'Josefin Sans';
   --header-font-is-google: 1;
-  --header-font-family-fallback: Georgia, serif;
   --code-font-family: 'Source Code Pro';
   --code-font-is-google: 1;
   --base-font-size: 20px;
-  --text-font-size: 1rem;
+  --text-font-size: 1.2em;
   --code-font-size: 0.9rem;
   --code-inline-font-size: 1em;
   --header-h1-font-size: 2.75rem;
@@ -52,8 +51,7 @@
   --inverse-text-color: #000000;
   --inverse-background-color: #E8FFC2;
   --inverse-header-color: A5BECC;
-  --inverse-link-color: #39AEA9;
-  --title-slide-background-color: #d65ea6;
+  --title-slide-background-color: #b7ede8;
   --title-slide-text-color: #000000;
   --header-background-color: #39AEA9;
   --header-background-text-color: #FFFFFF;
@@ -73,13 +71,13 @@ body {
   color: var(--text-color);
 }
 h1, h2, h3 {
-  font-family: var(--header-font-family), var(--header-font-family-fallback);
+  font-family: var(--header-font-family);
   font-weight: 600;
   color: var(--header-color);
 }
 .remark-slide-content {
   background-color: var(--background-color);
-  font-size: 1rem;
+  font-size: 1.2em;
   padding: 16px 64px 16px 64px;
   width: 100%;
   height: 100%;
@@ -101,17 +99,14 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #39AEA9;
+  color: #a3008b;
 }
 .remark-slide-number {
   color: #39AEA9;
   opacity: 1;
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
-strong {
-  font-weight: bold;
-  color: var(--text-bold-color);
-}
+strong { color: var(--text-bold-color); }
 a, a > code {
   color: var(--link-color);
   text-decoration: none;
@@ -132,9 +127,6 @@ a, a > code {
 }
 .inverse h1, .inverse h2, .inverse h3 {
   color: var(--inverse-header-color);
-}
-.inverse a, .inverse a > code {
-  color: var(--inverse-link-color);
 }
 .title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
   color: var(--title-slide-text-color);
@@ -214,36 +206,6 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   color: var(--text-color) !important;
 }
 
-/* Horizontal alignment of code blocks */
-.remark-slide-content.left pre,
-.remark-slide-content.center pre,
-.remark-slide-content.right pre {
-  text-align: start;
-  width: max-content;
-  max-width: 100%;
-}
-.remark-slide-content.left pre,
-.remark-slide-content.right pre {
-  min-width: 50%;
-  min-width: min(40ch, 100%);
-}
-.remark-slide-content.center pre {
-  min-width: 66%;
-  min-width: min(50ch, 100%);
-}
-.remark-slide-content.left pre {
-  margin-left: unset;
-  margin-right: auto;
-}
-.remark-slide-content.center pre {
-  margin-left: auto;
-  margin-right: auto;
-}
-.remark-slide-content.right pre {
-  margin-left: auto;
-  margin-right: unset;
-}
-
 /* Slide Header Background for h1 elements */
 .remark-slide-content.header_background > h1 {
   display: block;
@@ -297,3 +259,15 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: var(--black);
 }
 
+
+
+/* Extra CSS */
+.remark-slide a {
+  color: #1687a7;
+}
+.remark-slide-content h3 {
+  color: #1687a7;
+}
+.code-text-red {
+  color: #ff002f;
+}

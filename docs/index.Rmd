@@ -30,8 +30,14 @@ style_duo_accent(
   secondary_color = "#E8FFC2",
   inverse_header_color = "A5BECC",
   text_font_google = google_font("Titillium Web", "400"),
-  title_slide_background_color = "#d65ea6",
-  header_font_google = google_font("Josefin Sans", "400", "400i", "600i", "700")
+  text_font_size = "1.2em",
+  title_slide_background_color = "#b7ede8",
+  header_font_google = google_font("Josefin Sans", "400", "400i", "600i", "700"),
+  code_inline_color = "#a3008b",
+  extra_css =  list(
+  ".remark-slide a" = list("color" = "#1687a7"),
+  ".remark-slide-content h3" = list("color" = "#1687a7"),
+  ".code-text-red" = list("color" = "#ff002f"))
   
 )
 ```
@@ -66,11 +72,25 @@ background-position: center right 50px
 **Tema y sus elementos**
   - Modificar el tema a nuestro gusto
       - Ejemplo práctico 3
---
+---
+class: inverse
+background-image: url("img/cohete.png")
+background-size: 400px 400px
+background-position: center right 50px
 
+# Temario
+
+--
 **Uso creativo**
   - Ejemplo práctico 4
 
+--
+
+**Cómo practicar**
+
+--
+
+**Cierre**
 
 ---
 class: middle, inverse
@@ -168,16 +188,6 @@ ggplot(datos, aes(x = ..., y = ..., fill = ...))+
 - Es muy importante entender si los valores que asignamos a una estética son de tipo continuo o discreto. Si asignamos mal la escala, recibiremos el famoso error:
 
 
-```{css, echo=F}
-.code-bg-red .remark-code, .code-bg-red .remark-code * {
- color:red!important;
-}
-
-.code-sm .remark-code, .codesm .remark-code * {
- font-size: 0.6em;
-}
-```
-
 ```{r, echo=T, warning=F, out.width="0%", eval = F}
 library(ggplot2)
 ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
@@ -185,7 +195,7 @@ ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
   scale_color_`continuous`()
 ```
 
-.code-bg-red[
+.code-text-red[
 ```{r, error=TRUE, echo=F, warning=F, out.width="0%"}
 library(ggplot2)
 ggplot(iris, aes(x= Sepal.Length, y = Petal.Length, color = Species))+
@@ -217,7 +227,7 @@ En este caso **no** recibimos un error, pero tampoco visualizamos el cambio en l
 ]
 
 .pull-right[
-```{r, echo = F, fig.align='center', out.width="70%"}
+```{r, echo = F, fig.align='center', out.width="80%"}
 library(ggplot2)
 ggplot(iris, 
        aes(x = Sepal.Length, 
@@ -252,9 +262,11 @@ class: inverse
 
 - Revisar etiquetas sobrepuestas
   - Invertir ejes
-  - Escalar etiquetas con guides
+  - Escalar etiquetas con scale_*_discrete() y guide_axis()
+  
+- Dar formato a las etiquetas de ejes cuando sea necesario. Por ejemplo en caso de monedas o porcentaje.
 
-- Utilizar colores que tengan relación con los datos
+- Utilizar colores que tengan relación con los datos y sean contrastantes.
 
 - Revisar leyenda
 
@@ -264,7 +276,7 @@ class: inverse
 class: middle
 
 # Volvemos en
-`r countdown::countdown(minutes = 5, seconds = 00, top = "38%", right = "39%")`
+`r countdown::countdown(minutes = 5, seconds = 00, top = "35%", right = "30%")`
 ---
 class: inverse, middle
 
@@ -295,32 +307,120 @@ class: inverse, middle
 ---
 # Para publicaciones
 
-- [{ggstatsplot}](https://indrajeetpatil.github.io/ggstatsplot/) 
 
-- [{ggpubr}](https://rpkgs.datanovia.com/ggpubr/)
+.pull-left[
+
+### [{ggstatsplot}](https://indrajeetpatil.github.io/ggstatsplot/) 
+
+```{r, echo = F, out.width="80%"}
+knitr::include_graphics("https://rpkgs.datanovia.com/ggpubr/tools/README-ggpubr-box-plot-dot-plots-strip-charts-2.png")
+```
+
+]
+
+
+.pull-right[
+
+### [{ggpubr}](https://rpkgs.datanovia.com/ggpubr/)
+
+```{r, echo = F}
+knitr::include_graphics("https://indrajeetpatil.github.io/ggstatsplot/reference/figures/README-ggbetweenstats1-1.png")
+```
+
+]
+
+
 
 ---
 # Unir gráficos
 
-- [{patchwork}](https://patchwork.data-imaginist.com/)
+.pull-left[
 
-- [{cowplot}](https://wilkelab.org/cowplot/index.html)
+### [{patchwork}](https://patchwork.data-imaginist.com/)
+
+```{r, echo = F}
+knitr::include_graphics("https://patchwork.data-imaginist.com/articles/guides/assembly_files/figure-html/unnamed-chunk-15-1.png")
+```
+]
+
+.pull-right[
+
+### [{cowplot}](https://wilkelab.org/cowplot/index.html)
+
+```{r, echo = F}
+knitr::include_graphics("https://wilkelab.org/cowplot/articles/drawing_with_on_plots_files/figure-html/unnamed-chunk-11-1.png")
+```
+]
+
+
 
 ---
 # Más geoms
 
-- [{ggforce}](https://ggforce.data-imaginist.com/)
+.pull-left[
 
-- [{ggraph}](https://ggraph.data-imaginist.com/)
+### [{ggforce}](https://ggforce.data-imaginist.com/)
 
-- [{ggwordcloud}](https://lepennec.github.io/ggwordcloud/)
+
+```{r, echo = F}
+knitr::include_graphics("https://ggforce.data-imaginist.com/reference/geom_delvor-3.png")
+```
+
+]
+
+.pull-right[
+
+### [{ggraph}](https://ggraph.data-imaginist.com/)
+
+```{r, echo = F}
+knitr::include_graphics("https://ggraph.data-imaginist.com/articles/Layouts_files/figure-html/unnamed-chunk-18-1.png")
+```
+
+]
+
+---
+# Más geoms
+
+.pull-left[
+
+### [{geomtextpath}](https://lepennec.github.io/ggwordcloud/)
+
+```{r, echo = F}
+knitr::include_graphics("https://allancameron.github.io/geomtextpath/reference/figures/README-density_demo-1.png")
+```
+]
+
+
+.pull-right[
+
+### [{ggwordcloud}](https://lepennec.github.io/ggwordcloud/)
+
+```{r, echo = F}
+knitr::include_graphics("https://lepennec.github.io/ggwordcloud/articles/ggwordcloud_files/figure-html/unnamed-chunk-22-1.png")
+```
+]
 
 ---
 # Otros usos
 
-- [{calendR}](https://r-coder.com/calendar-plot-r/)
+.pull-left[
+### [{calendR}](https://r-coder.com/calendar-plot-r/)
 
-- [{ggkeyboard}](https://github.com/sharlagelfand/ggkeyboard)
+```{r, echo = F, out.width="60%", fig.align='center'}
+knitr::include_graphics("https://r-coder.com/wp-content/uploads/2020/09/background-image-calendar-r.png")
+```
+
+]
+
+
+
+.pull-right[
+### [{ggkeyboard}](https://github.com/sharlagelfand/ggkeyboard)
+
+```{r, echo = F}
+knitr::include_graphics("https://raw.githubusercontent.com/sharlagelfand/ggkeyboard/main/man/figures/README-pastel-1.png")
+```
+]
 
 ---
 class: inverse, middle
@@ -332,10 +432,48 @@ class: inverse, middle
 ---
 # Paquetes para temas
 
-- [{ggthemes}](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
-- [{hrbrthemes}](https://cinc.rud.is/web/packages/hrbrthemes/)
-- [{ggdark}](https://github.com/nsgrantham/ggdark)
-- [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+.pull-left[
+### [{ggthemes}](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+
+```{r, echo = F, out.width="70%", fig.align='center'}
+knitr::include_graphics("https://yutannihilation.github.io/allYourFigureAreBelongToUs/figure/source/1991-05-31-theme_wsj/theme_wsj-1.png")
+```
+
+]
+
+.pull-right[
+
+### [{hrbrthemes}](https://cinc.rud.is/web/packages/hrbrthemes/)
+
+```{r, echo = F}
+knitr::include_graphics("https://cinc.rud.is/web/packages/hrbrthemes/reference/figures/README-sc-1.png")
+```
+
+]
+
+---
+# Paquetes para temas
+
+.pull-left[
+### [{ggdark}](https://github.com/nsgrantham/ggdark)
+
+```{r, echo = F}
+knitr::include_graphics("https://github.com/nsgrantham/ggdark/raw/master/man/figures/add-element-1.png")
+```
+
+]
+
+.pull-right[
+### [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
+
+```{r, echo = F}
+knitr::include_graphics("https://ryo-n7.github.io/assets/2019-05-16-introducing-tvthemes-package_files/unnamed-chunk-8-1.png")
+```
+
+
+]
+
 
 ---
 ---
@@ -348,7 +486,7 @@ class: inverse, middle
 class: middle
 
 # Volvemos en
-`r countdown::countdown(minutes = 5, seconds = 00, top = "38%", right = "39%")`
+`r countdown::countdown(minutes = 5, seconds = 00, top = "35%", right = "30%")`
 ---
 ---
 class: inverse, middle
@@ -358,12 +496,57 @@ class: inverse, middle
 **Hay mucho más por aprender: codigo/04_uso-creativo.R**
 
 ---
+# Uso creativo: arte generativo
+
+.pull-left[
+### [Ijeamaka A](https://twitter.com/ijeamaka_a)
+### [Meghan Harris](https://www.thetidytrekker.com/rtistry-gallery)
+### [Antonio Sánchez Chinchón](https://twitter.com/aschinchon)
+### [Danielle Navarro](https://art.djnavarro.net/)
+### [Thomas Lin Pedersen](https://www.data-imaginist.com/art)
+]
+
+.pull-right[
+
+```{r, echo = F}
+knitr::include_graphics("https://djnavarro.net/series-unboxing/2000/unboxing_387.png")
+```
+
+https://art.djnavarro.net/gallery/unboxing/
+]
+
+
+---
+
 class: inverse, middle
 
 # Cómo practicar `r emo::ji(keyword = "muscle")`
 
 **Desafíos de visualización**
 
+---
+# Desafíos de visualización
+
+.pull-left[
+### [#genuary](https://genuary.art/)
+
+### [#30daychartchallenge](https://30daychartchallenge.org/)
+
+### [#30daymapchallenge](https://30daymapchallenge.com/)
+
+### [#DuBois Challenge](https://nightingaledvs.com/the-dubois-challenge/)
+
+]
+
+.pull-right[
+
+```{r, echo = F}
+knitr::include_graphics("https://pbs.twimg.com/media/FPKZks-WUAQXHWB?format=jpg&name=4096x4096")
+
+knitr::include_graphics("https://ossia.io/assets/blog/genuary2022/genuary.png")
+```
+
+]
 ---
 class: inverse, middle
 # ¡Muchas gracias! `r emo::ji(keyword = "clap")`
