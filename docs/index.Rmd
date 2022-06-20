@@ -282,6 +282,11 @@ class: inverse
   
 - Dar formato a las etiquetas de ejes cuando sea necesario. Por ejemplo en caso de monedas o porcentaje.
 
+---
+class: inverse
+
+# Resumen
+
 - Utilizar colores que tengan relación con los datos y sean contrastantes.
 
 - Revisar leyenda
